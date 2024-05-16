@@ -1,39 +1,54 @@
-Sure, here's a simple README file for your random image generator API:
+# Random Jokes and Image API
 
----
-
-# Random Image Generator API
-
-This API provides a simple endpoint to fetch a random image with its metadata.
+This API serves random jokes along with a random image. It combines data from the [Official Joke API](https://official-joke-api.appspot.com/) and the [Picsum Photos API](https://picsum.photos/).
 
 ## Usage
 
-### Endpoint
+### Get a Random Joke and Image
 
-```
-GET /get-img
-```
+- **URL**
 
-### Response
+  `/get-img`
 
-The API responds with a JSON object containing the name and URL of a random image.
+- **Method**
 
-Example Response:
-```json
-{
-  "name": "random image",
-  "url": "https://picsum.photos/200/300"
-}
-```
+  `GET`
 
-## Getting Started
+- **Success Response**
 
-1. Clone this repository or download the files.
-2. Install dependencies using `npm install`.
-3. Start the server with `node server.js` or `npm start`.
-4. The server will start on port 6060 by default.
-5. Access the API endpoint at `http://localhost:6060/get-img` to get a random image.
+  - **Code:** 200 OK <br />
+    **Content:** 
+    ```json
+    {
+      "name": "Random Joke and Image",
+      "url": "https://picsum.photos/200/300",
+      "setup": "Why don't skeletons fight each other?",
+      "punchline": "They don't have the guts."
+    }
+    ```
 
-## Dependencies
+- **Sample Call**
 
-- [Express](https://www.npmjs.com/package/express): Fast, unopinionated, minimalist web framework for Node.js.
+  ```bash
+  curl -X GET http://localhost:6060/get-img
+  ```
+
+## How to Run
+
+1. Clone this repository.
+2. Navigate to the project directory.
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+   
+4. Run the server:
+
+   ```bash
+   npm start
+   ```
+
+The server will start at `http://localhost:6060`.
+
+---
